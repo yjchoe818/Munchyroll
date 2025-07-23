@@ -47,7 +47,7 @@ function EpisodesList({ episodeData, episodeName, id, isDubbed = false, episodeP
           className={`animate-fadeIn transition-all duration-150 text-primary dark:text-secondary w-full flex items-center gap-2 rounded-2xl ${episode.id === episodeName ? 'bg-blue-500 text-secondary' : 'bg-secondary-light dark:bg-primary-hover hover:bg-secondary-hover dark:hover:bg-primary-light'}`}
           title={episode.title ? `Episode ${episode.number}: ${episode.title}` : `Episode ${episode.number}`}
         >
-          <img src={episode.image} alt={`Episode ${episode.number} Thumbnail`} className="rounded-2xl w-32 h-24 object-cover" />
+          <img src={episode.image.startsWith('http') ? episode.image : ''} alt={`Episode ${episode.number} Thumbnail`} className="rounded-2xl w-32 h-24 object-cover" />
           <div className="flex flex-col">
             <span className="font-semibold text-md">{`Episode ${episode.number}`}</span>
             {episode.title && <span className="text-xs italic">{episode.title}</span>}
